@@ -29,6 +29,7 @@ titanic
 ### Convertir une colonne "texte" en colonne "Chiffre"
 ```
 titanic["sex_num"] = titanic["sex"].map({"male": 0, "female": 1})
+titanic
 ```
 
 ## Découpage du tableau pour le faire passer dans le modèle
