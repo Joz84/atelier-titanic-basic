@@ -14,6 +14,7 @@ from tensorflow.keras import Sequential, layers
 ### Recupération  du Jeu de données
 ```
 titanic = sns.load_dataset("titanic")
+titanic
 ```
 
 ## Netoyage et Foramatage des données
