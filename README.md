@@ -57,17 +57,6 @@ print(values)
 values.max() / values.sum()
 ```
 
-### Garder une partie des données pour tester le resultat
-```
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=3)
-```
-
-### Mettre toutes les données sur un même pied d'égalité (standardisé)
-```
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-```
-
 ## Création du modèle
 ```
 model = Sequential()
@@ -80,20 +69,15 @@ model.summary()
 ## Entrainement du modèle
 ```
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics = 'accuracy')
-model.fit(X_train, y_train, batch_size=16, epochs=20)
+model.fit(X, y, batch_size=16, epochs=20)
 ```
 
 ## Evaluer la fiabilité du modèle
 ```
-model.evaluate(scaler.transform(X_test), y_test)
-```
-
-## La prédiction est une probabilité
-```
-model.predict(scaler.transform(X_test))
+model.evaluate(X, y)
 ```
 
 ## Est ce que j'aurais survécu?
 ```
-model.predict(scaler.transform(my_X))
+model.predict(my_X)
 ```
