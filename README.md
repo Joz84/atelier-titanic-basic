@@ -72,7 +72,7 @@ model.summary()
 
 ## Entrainement du modèle
 ```
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics = 'accuracy')
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics = ['accuracy'])
 model.fit(X, y, batch_size=16, epochs=20)
 ```
 
